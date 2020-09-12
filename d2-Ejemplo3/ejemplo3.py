@@ -4,7 +4,7 @@ top2 = 624329.00
 top3 = 867123.00
 salario = float(input("ingrese su sueldo mensual:"))
 salario_anual = salario * 12
-isr = 0;
+isr = 0
 
 if salario_anual <= top1:
     print("Excenta")
