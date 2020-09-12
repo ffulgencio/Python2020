@@ -1,55 +1,84 @@
 class Curso:
-    def __init__(self, titulo, cupos):
+    def __init__(self, titulo):
         self.titulo = titulo
         self.participantes = 0
-        self.cupos = cupos
+        self.cupos = 5
 
     def agregarParticipante(self):
         if self.participantes < self.cupos:
             self.participantes += 1
+        else:
+            print("No hay cupos")
 
     def display(self):
-        print(f"{self.titulo} cupos: {self.cupos} participantes inscritos: {self.participantes}")
+        print(f"{self.titulo} cupos: {self.cupos} participantes inscritos: {self.participantes} Quedan {self.cupos - self.participantes}")
 
 
-class Corolla:
-    def __init__(self, galones, color):
-        self.marca = "Toyota"
-        self.cantidad_ruedas = 4
-        self.cantidad_puertas = 4
-        self.tipo_combustible = "gasolina"
-        self.galones_combustible = galones
-        self.color = color
+class Carro:
+    def __init__(self):
+        self.marca = None
+        self.cantidad_ruedas = None
+        self.cantidad_puertas = None
+        self.tipo_combustible = None
+        self.galones_combustible = None
+        self.color = None
+        self.encendido = False
 
-    def encender(self):
-        if self.galones_combustible > 0:
-            print("El corolla enciende")
+    def enciende(self):
+        pass
 
     def apagar(self):
         pass
 
-    def acelerar(self):
+    def acelera(self):
         pass
 
-    def frenar(self):
+    def frena(self):
         pass
 
+class Persona:
+    def __init__(self):
+        self.nombre =""
+        self.apellido =""
+        self.cedula = ""
+        self.telefono = ""
+class Cliente(Persona):
+    pass
 
-crojo = Corolla(5, "rojo")
-cazul = Corolla(6, "Azul")
+class Empleado(Persona):
+    def cobrar(self):
+        pass
 
-sql = Curso("Gestion de bases de datos sql", 20)
-python = Curso("POO python", 30)
+    def pasarInventario(self):
+        pass
+
+class Suplidor(Persona):
+    pass
+
+e1 = Empleado()
+e1.cobrar()
+e1.pasarInventario()
+
+class Corolla(Carro):
+    pass
+
+
+
+class Civic(Carro):
+    pass
+
+crojo = Corolla()
+cazul = Corolla()
+
+sql = Curso("Gestion de bases de datos sql")
+
 
 sql.display()
 sql.agregarParticipante()
 sql.agregarParticipante()
 sql.agregarParticipante()
 sql.agregarParticipante()
-sql.agregarParticipante()
-sql.agregarParticipante()
-sql.agregarParticipante()
-sql.agregarParticipante()
+
 sql.display()
 sql.cupos = 40
 sql.display()
